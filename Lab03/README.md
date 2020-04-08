@@ -11,6 +11,8 @@ Service URL (instance 1): http://localhost:8081
 
 Service URL (instance 2): http://localhost:8082
 
+API-Gateway URL: http://localhost:8080
+
 Config Server: http://localhost:8888
 
 For checking refresh:
