@@ -1,25 +1,42 @@
-### Api-gateway config
-GET http://localhost:8080/config
+### Fetch entities
+GET http://localhost:8080/get
 Content-type: application/json
 
-### Service (instance 1) config
-GET http://localhost:8081/cars/config
+### Fetch entity by id
+GET http://localhost:8080/get?id=1
 Content-type: application/json
 
-### Service (instance 2) config
-GET http://localhost:8082/cars/config
-Content-type: application/json
+### Create entity
+POST http://localhost:8080/add
+Content-Type: application/json
 
-### Default Client Configs in config server
-GET http://localhost:8888/client/default
-Content-type: application/json
+{
+	"model": "test",
+	"manufacturer": "test",
+	"manufactureYear": 2020,
+	"gearbox": "test",
+	"fuel": "test",
+	"horsepower": 1000,
+	"color": "test",
+	"price": 999
+}
 
-### Default Gateway Configs in config server
-GET http://localhost:8888/gateway/default
-Content-type: application/json
+### Update entity
+POST http://localhost:8080/update
+Content-Type: application/json
 
-### Config refresh
-POST http://localhost:8081/actuator/refresh
+{
+	"id": 1,
+	"model": "test",
+	"manufacturer": "test",
+	"manufactureYear": 2020,
+	"gearbox": "aaa",
+	"fuel": "test",
+	"horsepower": 1000,
+	"color": "red",
+	"price": 123456
+}
 
-### Bus refresh
-POST http://localhost:8081/actuator/bus-refresh
+### Delete entity
+POST http://localhost:8080/delete?id=1
+Content-Type: application/json
