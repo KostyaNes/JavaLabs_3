@@ -1,0 +1,42 @@
+### Fetch entities
+GET http://localhost:8080/get
+Content-type: application/json
+
+### Fetch entity by id
+GET http://localhost:8080/get?id=1
+Content-type: application/json
+
+### Create entity
+POST http://localhost:8080/add
+Content-Type: application/json
+
+{
+	"model": "test",
+	"manufacturer": "test",
+	"manufactureYear": 2020,
+	"gearbox": "test",
+	"fuel": "test",
+	"horsepower": 1000,
+	"color": "test",
+	"price": 999
+}
+
+### Update entity
+POST http://localhost:8080/update
+Content-Type: application/json
+
+{
+	"id": 1,
+	"model": "test",
+	"manufacturer": "test",
+	"manufactureYear": 2020,
+	"gearbox": "aaa",
+	"fuel": "test",
+	"horsepower": 1000,
+	"color": "red",
+	"price": 123456
+}
+
+### Delete entity
+POST http://localhost:8080/delete?id=1
+Content-Type: application/json
